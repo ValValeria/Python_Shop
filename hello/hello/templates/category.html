@@ -1,0 +1,301 @@
+<html lang="ru"><head>
+    <meta charset="UTF-8">
+    <title>Категории товаров</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="robots" content="noindex, nofollow">
+    <link rel="stylesheet" href="/public/css/style.css">
+    {%if scripts%}
+    {% for script in scripts %}
+     <script src="{{script}}"></script>
+    {% endfor %}
+    {%elif styles%}
+    {% for style in styles %}
+     <link href="{{style}}"/>
+    {% endfor %}
+    {%endif%}
+  </head>
+  <body>
+  <header class="page-header page-header--inner page-header--catalog">
+    <div class="page-header__background page-header__background--inner page-header__background--catalog" data-image="../img/catalog-backround1-desktop@1x.jpg" style="visibility: visible; height: auto;"></div>
+  
+    <aside class="page-header__info-block info-block info-block--border info-block--transparent">
+      <div class="container">
+        <div class="info-block__wrapper">
+          <div class="info-block__faq">
+            <a class="info-block__faq-item info-block__faq-item--phone" href="tel:+74950000000">
+              8 (495) 000-00-00
+            </a>
+            <a class="info-block__faq-item info-block__faq-item--quest" href="#">
+              Ответы на вопросы
+            </a>
+          </div>
+  
+          <div class="info-block__lk">
+            <a class="info-block__link" href="login.html">Вход</a>
+            <span>/</span>
+            <a class="info-block__link" href="register.html">Регистрация</a>
+          </div>
+        </div>
+      </div>
+    </aside>
+  
+    <aside class="page-header__menu-block page-header__menu-block--closed page-header__menu-block--transparent">
+      <div class="container page-header__user-menu user-menu">
+        <button class="user-menu__toggle">
+          <span class="visually-hidden">Открыть меню</span>
+          <i class="user-menu__toggle-icon"></i>
+        </button>
+        <div class="user-menu__logo">
+          <a class="user-menu__logo-image">
+            MyShop
+          </a>
+        </div>
+        <div class="user-menu__icons">
+          <a href="#" class="user-menu__icons-item">
+            <svg width="20px" height="20px" viewBox="0 0 20 20" fill="#FFFFFF" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+              <defs>
+                <path d="M15.4625645,14.0501328 L21.6428489,20.2513717 C21.8375914,20.4467745 21.8372729,20.7629832 21.6421372,20.9579934 L20.9482742,21.6514099 C20.7530973,21.8464612 20.436807,21.846529 20.2415465,21.6515612 L14.046238,15.4655392 C12.784921,16.4282365 11.2092318,17 9.5,17 C5.35786438,17 2,13.6421356 2,9.5 C2,5.35786438 5.35786438,2 9.5,2 C13.6421356,2 17,5.35786438 17,9.5 C17,11.2109915 16.4270586,12.7881654 15.4625645,14.0501328 Z M15,9.5 C15,12.5375661 12.5375661,15 9.5,15 C6.46243388,15 4,12.5375661 4,9.5 C4,6.46243388 6.46243388,4 9.5,4 C12.5375661,4 15,6.46243388 15,9.5 Z" id="search-icon"></path>
+              </defs>
+              <g id="Login" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                <g id="search-icon-ic_search">
+                  <mask id="search-icon-mask-2" fill="white">
+                    <use xlink:href="#search-icon"></use>
+                  </mask>
+                  <g id="search-icon-search"></g>
+                  <g id="search-icon-Light-100" mask="url(#search-icon-mask-2)" fill="#FFFFFF" fill-rule="evenodd">
+                    <rect id="search-icon-Placeholder-2" x="0" y="0" width="24" height="24"></rect>
+                  </g>
+                </g>
+              </g>
+            </svg>
+          </a>
+          <a href="#" class="user-menu__icons-item">
+            <svg width="20px" height="19px" viewBox="0 0 20 19" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+              <defs></defs>
+              <g id="user-icon-Home" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                <g id="user-icon-m_Home_page" transform="translate(-227.000000, -20.000000)" fill="#FFFFFF">
+                  <g id="user-icon-Group-2">
+                    <path d="M233.543967,28.6132965 C232.592539,27.703026 232,26.4207105 232,25 C232,22.2385763 234.238576,20 237,20 C239.761424,20 242,22.2385763 242,25 C242,26.4207105 241.407461,27.703026 240.456033,28.6132965 C244.27578,30.0201274 247,33.6919259 247,38 C247,38.1666667 247,38.3333333 247,38.5 C247,38.7761424 246.776142,39 246.5,39 L245.498546,39.0000018 C245.222582,39.0000018 244.998798,38.7764236 244.998544,38.50046 C244.998357,38.2963758 244.998842,38.1295558 245,38 C245,33.581722 241.418278,30 237,30 C232.581722,30 229,33.581722 229,38 C229.001253,38.1402053 229.001802,38.3069885 229.001645,38.5003493 L229.0017,38.5003494 C229.001477,38.7763641 228.77766,39 228.501646,39 L227.5,39 C227.223858,39 227,38.7761424 227,38.5 C227,38.3333333 227,38.1666667 227,38 C227,33.6919259 229.72422,30.0201274 233.543967,28.6132965 Z M237,22 C238.656854,22 240,23.3431458 240,25 C240,26.6568542 238.656854,28 237,28 C235.343146,28 234,26.6568542 234,25 C234,23.3431458 235.343146,22 237,22 Z" id="user-icon-accounts"></path>
+                  </g>
+                </g>
+              </g>
+            </svg>
+          </a>
+        </div>
+        <nav class="page-header__main-nav main-nav">
+          <div class="container">
+            <ul class="main-nav__list">
+              <li class="main-nav__list-item">
+                <a class="active" href="#">Каталог</a>
+              </li>
+              <li class="main-nav__list-item">
+                <a href="#">Агентам</a>
+              </li>
+              <li class="main-nav__list-item">
+                <a href="#">О компании</a>
+              </li>
+              <li class="main-nav__list-item main-nav__list-item--hidden">
+                <a href="#">Ответы на вопросы</a>
+              </li>
+              <li class="main-nav__list-item">
+                <a href="#">Контакты</a>
+              </li>
+            </ul>
+          </div>
+          <div class="main-nav__number">
+            <div class="container">
+              <a href="tel:+74950000000">8 (495) 000-00-00</a>
+            </div>
+          </div>
+        </nav>
+      </div>
+    </aside>
+  
+    <section class="page-main__preview preview-section">
+      <div class="container">
+        <h1 class="preview-section__title">
+          Категории товаров
+        </h1>
+        <ul class="preview-section__breadcrumb breadcrumb">
+          <li class="breadcrumb__item">
+            <a href="#" class="breadcrumb__item-link">Main</a>
+          </li>
+          {%if posts %}
+          <li class="breadcrumb__item">
+            {% set categories=posts[0].category1%}
+            {% set do={"furnish":"Мебель","services":"Услуги","cars":"Авто"}%}
+            {%for key  in do%}
+               {%if getattr(categories,key,False) %}
+                 <a class="breadcrumb__item-link active" href="/categories/{{key}}">{{do[key]}}</a>
+               {%endif%}
+            {%endfor%}
+            
+          </li>
+          {%endif%}
+        </ul>
+      </div>
+    </section>
+  </header>
+  
+  <main class="page-main">
+    <section class="page-main__choice choice-category">
+      <div class="container">
+        <div class="choice-category__wrapper">
+          <h2 class="choice-category__title">
+            Выберите категорию
+          </h2>
+          <p class="choice-category__description">
+            Также как экономическая повестка сегодняшнего дня играет определяющее значение для благоприятных перспектив. Активно развивающиеся страны третьего мира объединены в целые кластеры себе подобных.
+          </p>
+          <form class="form form--search" name="search">
+            <div class="form__item-wrapper">
+              <label class="visually-hidden" for="search-field">Поиск</label>
+              <input class="field-text__value" type="text" name="search" id="search-field" placeholder="поиск">
+  
+              <button class="button button--search"></button>
+            </div>
+          </form>
+        </div>
+      </div>
+  
+      <div class="choice-category__slider swiper-container swiper-container-horizontal">
+        <ul class="choice-category__slider-wrapper choice-list swiper-wrapper" style="transform: translate3d(0px, 0px, 0px);">
+           {%if posts%}
+           {% for post in posts%}
+           {% set images=post.images1.images.split(',')%}
+
+          <li class="choice-list__item choice-list__item--animation swiper-slide swiper-slide-next" style="margin-right: 20px;  max-height: 400px !important;">
+            <a href="#" class="choice-list__item-link" style="  max-height: 400px !important;">
+              <picture>
+                <img src="/public/{{images[0]}}" alt="...">
+              </picture>
+              <div class="choice-list__item-link-text">
+                <h3>{{post.title}}</h3>
+              
+                <br/>
+                <a class="button  ac-company__button " style="max-width:90%;margin:0 auto" href="/product/{{post.id}}">Посмотреть</a>
+              </div>
+             
+            </a>
+          </li>
+           {%endfor%}
+           {%endif%}
+          
+        </ul>
+      <span class="swiper-notification" aria-live="assertive" aria-atomic="true"></span></div>
+    </section>
+  </main>
+  
+  <footer class="page-footer footer">
+    <div class="container footer__wrapper-top">
+      <article class="footer__company">
+        <h2 class="visually-hidden">Описание компании</h2>
+        <div class="footer__company-logo">
+          <a class="footer__company-logo-image">
+            MyShop
+          </a>
+        </div>
+        <p class="footer__company-description">
+          Крупнейшай платформа для агентов в России
+        </p>
+      </article>
+      <article class="footer__section footer__social">
+        <h2 class="footer__section-title">Мы в соц. сетях</h2>
+        <ul class="footer__social-list">
+          <li class="footer__social-list-item">
+            <a href="#">
+              <span class="visually-hidden">Twitter</span>
+              <svg width="16" height="14" fill="#FFF" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                <defs>
+                  <path d="M16 3.098a6.35 6.35 0 0 1-1.885.536A3.395 3.395 0 0 0 15.56 1.75a6.418 6.418 0 0 1-2.086.826A3.22 3.22 0 0 0 11.077 1.5c-1.812 0-3.281 1.526-3.281 3.408 0 .267.028.526.084.776-2.728-.142-5.146-1.498-6.766-3.562A3.504 3.504 0 0 0 .67 3.837c0 1.182.579 2.225 1.46 2.837a3.193 3.193 0 0 1-1.488-.425v.042c0 1.651 1.132 3.03 2.635 3.341a3.15 3.15 0 0 1-1.483.06c.418 1.353 1.63 2.339 3.066 2.365A6.432 6.432 0 0 1 0 13.47 9.059 9.059 0 0 0 5.032 15c6.038 0 9.34-5.192 9.34-9.696 0-.148-.003-.297-.009-.442A6.788 6.788 0 0 0 16 3.098" id="twitter"></path>
+                </defs>
+                <g transform="translate(0 -1)" fill="none" fill-rule="evenodd">
+                  <mask id="twitter-b" fill="#fff">
+                    <use xlink:href="#twitter"></use>
+                  </mask>
+                  <g mask="url(#twitter-b)" fill="#FFF" fill-opacity=".6">
+                    <path d="M0 0h16v16H0z"></path>
+                  </g>
+                </g>
+              </svg>
+            </a>
+          </li>
+          <li class="footer__social-list-item">
+            <a href="#">
+              <span class="visually-hidden">Facebook</span>
+              <svg width="16" height="16" fill="#FFF" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                <defs>
+                  <path d="M8.546 16H.883A.883.883 0 0 1 0 15.117V.883C0 .395.395 0 .883 0h14.234c.488 0 .883.395.883.883v14.234a.883.883 0 0 1-.883.883H11.04V9.804h2.08l.31-2.415h-2.39V5.848c0-.7.194-1.176 1.196-1.176h1.28v-2.16a16.99 16.99 0 0 0-1.864-.095c-1.844 0-3.106 1.125-3.106 3.191V7.39H6.461v2.415h2.085V16z" id="facebook"></path>
+                </defs>
+                <g fill="none" fill-rule="evenodd">
+                  <mask id="facebook-b" fill="#fff">
+                    <use xlink:href="#facebook"></use>
+                  </mask>
+                  <g mask="url(#facebook-b)" fill="#FFF" fill-opacity=".6">
+                    <path d="M0 0h16v16H0z"></path>
+                  </g>
+                </g>
+              </svg>
+            </a>
+          </li>
+        </ul>
+      </article>
+      <article class="footer__section footer__contacts">
+        <h2 class="footer__section-title">Контакты</h2>
+        <a class="footer__section-link footer__section-link--email" href="mailto:support@partners.ru">
+          support@partners.ru
+        </a>
+        <a class="footer__section-link footer__section-link--phone" href="tel:+74950000000">
+          8 (495) 000-00-00
+        </a>
+      </article>
+      <article class="footer__section footer__address">
+        <h2 class="footer__section-title">Адрес</h2>
+        <a class="footer__section-link footer__section-link--address" href="#">
+          ул. Боровая, д.7, стр.7 г. Москва, 111020
+        </a>
+      </article>
+    </div>
+    <div class="footer__wrapper-bottom">
+      <div class="container">
+        <article class="footer__copyright">
+          <h2 class="visually-hidden">Копирайт</h2>
+          <p class="footer__copyright-text">
+            © 2018 Partners. Все права защищены
+          </p>
+        </article>
+        <article class="footer__navigation">
+          <h2 class="visually-hidden">Меню навигации</h2>
+          <ul class="footer__navigation-list">
+            <li class="footer__navigation-list-item">
+              <a href="faq.html">Ответы на вопросы</a>
+            </li>
+            <li class="footer__navigation-list-item">
+              <a href="catalog_1_state.html">Каталог</a>
+            </li>
+            <li class="footer__navigation-list-item">
+              <a href="#">Агентам</a>
+            </li>
+            <li class="footer__navigation-list-item">
+              <a href="#">Поставщикам</a>
+            </li>
+            <li class="footer__navigation-list-item">
+              <a href="about-us.html">О компании</a>
+            </li>
+            <li class="footer__navigation-list-item">
+              <a href="contacts.html">Контакты</a>
+            </li>
+          </ul>
+        </article>
+      </div>
+    </div>
+  </footer>
+  
+  
+  
+  
+  
+  
+  
+  
+  </body></html>

@@ -1,0 +1,68 @@
+{% extends 'template.html' %}
+
+
+{% block main %}
+
+<main class ='page-main'>
+    <section class="page-main__events events">
+     
+        <div class="container">
+          <div class="events__titles block-title">
+            <h2 class="block-title__title block-title__title--decor-middle">Наши продукты</h2>
+            <p class="block-title__text">
+              Мы любим наших клиентов и поставщиков, можно другой текст но с лояльным посылом
+            </p>
+          </div>
+        </div>
+  
+        <div class="events__slider-container">
+          <div class="events__slider swiper-container swiper-container-horizontal">
+            <div class="swiper-wrapper">
+              {% for post in posts%}
+              {%if post
+                %}
+               {% set images=post.images1.images.split(',')%}
+              <article class="swiper-slide events__slider-item swiper-slide-active" style="width: 222.667px; margin-right: 30px;">
+                <div class="events__slider-item-image" style="background-image: url('../public/{{images[0]}}');background-size:cover">
+                </div>
+                <div class="events__slider-item-description">
+                  <h3>
+                      {{post.title}}
+                  </h3>
+                  <h3>
+                    {% set categories=post.category1%}
+                    {% set do={"furnish":"Мебель","services":"Услуги","cars":"Авто"}%}
+                   
+                   {%for key  in do%}
+                     {%if getattr(categories,key,False) %}
+                          <a class="breadcrumb__item-link active" href="/categories/{{key}}"> #{{do[key]}}</a>
+                     {%endif%}
+                   {%endfor%}
+            
+                  </h3>
+                  <p>
+                      {{post.content[0:20]}}
+                  </p>
+                  <div class="events__slider-item-description-wrapper">
+                    <a class="events__slider-item-button button button--more" href='/product/{{post.id}}''>Подробнее</a>
+                    <br/>
+                    {%if user.has_perm('update')%}
+                    <button class="events__slider-item-button button button--more">Обновить</button>
+                    {%endif%}
+                  </div>
+                </div>
+              </article>
+              {%endif%}
+              {% endfor %}
+            
+            </div>
+          <span class="swiper-notification" aria-live="assertive" aria-atomic="true"></span></div>
+          <div class="swiper-button-next" tabindex="0" role="button" aria-label="Next slide" aria-disabled="false"></div>
+          <div class="swiper-button-prev swiper-button-disabled" tabindex="0" role="button" aria-label="Previous slide" aria-disabled="true"></div>
+        </div>
+      </section>
+</main>
+<script>
+  let ws=new WebSocket('ws://localhost:8080')
+</script>
+{% endblock %}

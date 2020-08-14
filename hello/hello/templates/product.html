@@ -1,0 +1,126 @@
+
+
+ <!--"https://liga-a.ru/portfolio/rus-partners/css/style.min.css"-->
+ {%extends "template.html"%}
+{% block main %}
+    <main class="inner-page" style="padding-top:2rem">
+      <section class="inner-page__preview  preview">
+        <h2 class="visually-hidden">Фотографии товара</h2>
+
+        <div class="preview__wrapper swiper-container swiper-container-horizontal">
+            <!--Start-->
+            <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
+                <div class="carousel-inner">
+                    {%set images=main_post.images1.images.split(',')%}
+                    {% for image in images%}
+                     <div class="carousel-item active">
+                        <img src="../public/{{image}}"class="d-block w-100" alt="...">
+                      </div>
+                     {%endfor%}
+            
+                </div>
+                <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
+                  <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                  <span class="sr-only">Previous</span>
+                </a>
+                <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
+                  <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                  <span class="sr-only">Next</span>
+                </a>
+              </div>
+            <!--End-->
+          
+        <span class="swiper-notification" aria-live="assertive" aria-atomic="true"></span></div>
+      </section>
+
+      <section class="select">
+        <div class="select__wrapper">
+          <div class="select__header">
+            <h1 class="select__title">{{main_post.title}}</h1>
+            <p>{{main_post.content}}</p>
+
+          </div>
+          <div class="select__info">
+            <table class="select__table  table">
+              <tbody><tr>
+                <td class="table__field">Поставщик:</td>
+                <td class="table__value">{{main_post.users.username}}</td>
+              </tr>
+          
+            </tbody></table>
+          </div>
+          {%if hello %}
+          Hello
+          {%endif%}
+          <div class="select__order" method="get" data-url="/order/{{main_post.id}}/" style="margin-bottom: 70px;">
+            <div class="select__value-list">
+              <div class="select__value-item  field-text">
+                <label class="field-text__label" for="amount">Кол-во</label>
+                <div class="jq-number" id="amount-styler"><div class="jq-number__field"><input type="number" value="1"min="1" max="20"name="count1" class="oneshot" id="amount1" ></div><div class="jq-number__spin minus"></div><div class="jq-number__spin plus"></div></div>
+              </div>
+             
+            </div>
+            <div class="select__price-list">
+              <div class="select__price-item">
+                <label class="visually-hidden" for="price-now">Новая цена</label>
+                <input class="select-price  select-price--now" type="text" name="price-now" id="price-now" value="44 000 ₽" tabindex="-1" readonly="">
+              </div>
+              
+            
+            </div>
+            <button class="select__button  button  open" id="price"><span class="select__button-icon">Заказать</span></button>
+            {%if user.has_perm('delete',main_post.id)%}
+            <button class="select__button  button  " ><span class="select__button-icon">Удалить</span></button>
+            {%endif%}
+            <br/>
+          </div>
+        </div>
+      </section>
+
+      <section class="delivery  box  " style="position: static;
+      transform: translateY(-100px);width:100%">
+        <div class="delivery__wrapper" style="border:none">
+          <div class="delivery__header">
+            <h2 class="delivery__title">Другие товары</h2>
+          </div>
+        </div>
+        <div class="delivery__info" style="    margin: 0 !important;">
+          {%if object_list	            %}
+          <div class="swiper-wrapper">
+            {% for post in object_list   %}
+            {%if post
+              %}
+             {% set images=post.images.images.split(',')%}
+            <article class="swiper-slide events__slider-item swiper-slide-active" style="width: 222.667px; margin-right: 30px;">
+              <div class="events__slider-item-image" style="background-image: url('../public/{{images[0]}}');background-size:cover">
+              </div>
+              <div class="events__slider-item-description">
+                <h3>
+                    {{post.title}}
+                </h3>
+                <p>
+                    {{post.content[0:20]}}
+                </p>
+                <div class="events__slider-item-description-wrapper">
+                  <button class="events__slider-item-button button button--more">Подробнее</button>
+                  <br/>
+                  {%if user.has_perm('update')%}
+                  <button class="events__slider-item-button button button--more">Обновить</button>
+                  {%endif%}
+                </div>
+              </div>
+            </article>
+            {%endif%}
+            {% endfor %}
+          
+          </div>
+          {%endif%}
+        </div>
+      </section>
+       
+    </main>
+    <script>
+
+        console.log("{{styles|safe}}")
+    </script>
+{%endblock %}

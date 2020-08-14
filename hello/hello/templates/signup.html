@@ -1,0 +1,50 @@
+{% extends ('template.html')%}
+{% block main%}
+<main class="login-page">
+  <section class="login" style="background-image: url('https://liga-a.ru/portfolio/rus-partners/img/registration-background@1x.jpg');">
+    {%if not user.is_authenticated%}
+    <div class="login__wrapper">
+      <div class="login__action-list">
+        <a class="login__action  login__action--register  login__action--on">Регистрация </a>
+      </div>
+      <form class="login__form  form" method="post" >
+        {{ csrf_input }}
+        <div class="form__box  toggle__box  toggle__box--on">
+          <h2 class="form__label">Личные данные</h2>
+          <ul class="form__list">
+            <li class="form__item  field-text">
+              <label class="field-text__label  visually-hidden" for="first-name">Введите имя</label>
+              <input class="field-text__value" type="text" name="username" id="first-name" placeholder="Имя*" required="" autofocus="">
+            </li>
+           
+            <li class="form__item  field-text">
+              <label class="field-text__label  visually-hidden" for="phone">Ваш email</label>
+              <input class="field-text__value" type="email" name="email" id="phone">
+            </li>
+           
+            <li class="form__item  field-text">
+              <label class="field-text__label  visually-hidden" for="password">Придумайте пароль</label>
+              <input class="field-text__value" type="password" name="password" id="password" placeholder="Придумайте пароль*" required="">
+            </li>
+        
+          </ul>
+        </div>
+        {% if form %}
+          <ul class='list-group'>
+           {%for field in form%}
+               {{field.errors}}
+           {%endfor%}
+           </ul>
+         {%endif%}
+        <button class="form__button  button" type="submit" >Зарегистрироваться</button>
+        <p class="form__info">У вас есть учётная запись?<a href="#" class="form__link">Вход</a></p>
+      </form>
+    </div>
+    {%else%}
+    <div class="list-group">
+      <a href="#" class="list-group-item list-group-item-action list-group-item-primary">Вы уже вошли</a>
+   </div>
+    {%endif%}
+  </section>
+</main>
+{%endblock%}
